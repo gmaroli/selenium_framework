@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="basePath">./logs</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="File" fileName="${basePath}/ve.log" filePattern="${basePath}/ve-%d{yyyy-MM-dd}.log">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %c{2} -%msg%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<SizeBasedTriggeringPolicy size="100 KB"/>
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+        <Root level="trace">
+			<AppenderRef ref="File"/>
+		</Root>
+		<Logger name="TestProj_01" level="info" additivity="false">
+			<AppenderRef ref="File"/>
+		</Logger>
+	</Loggers>
+</Configuration>
