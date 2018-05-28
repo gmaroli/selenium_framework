@@ -33,7 +33,7 @@ Download these files and add them to the build path of the project, if using mav
 Create a log4j2.xml file (usually under the resources folder within your project)
 We need to make sure that the script has to pick up these details for logging, so we need to add the source of the log4j2.xml file folder under the Java Build Path
 
-After this we can add logging to any call in the project. See sample script below ( refer to log4j2.xml under code section)
+After this we can add logging to any class in the project. See sample script below ( refer to log4j2.xml under code section)
 
 ```java
 import org.apache.logging.log4j.LogManager;
